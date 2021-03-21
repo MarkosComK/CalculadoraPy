@@ -1,3 +1,5 @@
-def soma(a=0, b=0):
-    return a + b
-
+#v = ''
+v = str(input('Aqui: '))
+total = 0
+total = str(eval(v))
+print(total)
