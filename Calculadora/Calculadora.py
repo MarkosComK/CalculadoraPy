@@ -5,34 +5,34 @@ root.geometry('480x746')
 root.resizable(False, False)
 root.title('Calculadora Cobra')
 
-espressao = ''
+#Expressão matemática
+expressao = ''
 
+#Faz botão pressionado aparecer na tela
 def press(num):
-    global espressao
-    espressao = espressao + str(num)
-    equacao.set(espressao)
+    global expressao
+    expressao = expressao + str(num)
+    equacao.set(expressao)
 
-
+#Função Igualdade
 def resultado():
-    global espressao
-    result = str(eval(espressao))
+    global expressao
+    result = str(eval(expressao))
     equacao.set(result)
 
-
+#Função CE
 def limpar():
-    global espressao
-    espressao = ''
+    global expressao
+    expressao = ''
     equacao.set('')
 
 
 equacao = StringVar()
 
-#class Calculadora:
-telaFrame = Frame(root, height=140, width=480, bd=0, highlightbackground="black", highlightcolor="black", highlightthickness=1)
-telaFrame.place(x=0, y=0)
 telaInput = Entry(root, font = ('arial', 100, 'normal'), textvariable=equacao, width=7, bg="black", bd=0, justify=LEFT, fg='white')
 telaInput.place(x=0, y=0)
-#def __init__(self, master=None):
+
+#Botões da calculadora
 b1 = Button(text='7', bg='white')
 b1.img = PhotoImage()
 b1.config(height=145, width=120, image=b1.img, compound=CENTER, command=lambda: press(7))
@@ -83,5 +83,4 @@ b15 = Button(text='+', bg='white')
 b15.config(height=145, width=114, image=b1.img, compound=CENTER, command=lambda: press('+'))
 b15.place(x=360, y=593)
 
-#Calculadora(root)
 root.mainloop()
